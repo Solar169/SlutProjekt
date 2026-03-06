@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T9wlqS7wDtY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\herman.ahlman\\Documents\\Programmering_1\\SlutProjekt\\SlutProjekt\\SlutProjekt.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\herman.ahlman\\.nuget\\packages\\raylib-cs\\7.0.2\\raylib-cs.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -20,3 +20,4 @@ C:\Users\herman.ahlman\Documents\Programmering_1\SlutProjekt\SlutProjekt\obj\Deb
 C:\Users\herman.ahlman\Documents\Programmering_1\SlutProjekt\SlutProjekt\obj\Debug\net9.0\SlutProjekt.pdb
 C:\Users\herman.ahlman\Documents\Programmering_1\SlutProjekt\SlutProjekt\obj\Debug\net9.0\SlutProjekt.genruntimeconfig.cache
 C:\Users\herman.ahlman\Documents\Programmering_1\SlutProjekt\SlutProjekt\obj\Debug\net9.0\ref\SlutProjekt.dll
+C:\Users\herman.ahlman\Documents\Programmering_1\SlutProjekt\SlutProjekt\obj\Debug\net9.0\SlutProjekt.sourcelink.json

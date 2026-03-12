@@ -2,14 +2,25 @@ using System.Numerics;
 using Raylib_cs;
 
 
-Raylib.InitWindow(800, 600, "slutprojekt");
+Raylib.InitWindow(1200, 800, "slutprojekt");
 Raylib.SetTargetFPS(30);
 
-     Vector2 position = new Vector2(350f, 200f);
 
-     Vector2 movementX = new Vector2(10, 0);
+// player
+     Vector2 position = new Vector2(600f, 400f);
 
-     Vector2 movemntY = new Vector2(0, 10);
+     Vector2 movementX = new Vector2(12.5f, 0);
+
+     Vector2 movemntY = new Vector2(0, 12.5f);
+
+
+// bullet
+
+     List<string> bullets = [];
+     Vector2 bullet_position = position;
+     Vector2 bullet_movementy = new Vector2(0, 15);
+     Vector2 bullet_movementx = new Vector2(15, 0);
+
 
 
 while (!Raylib.WindowShouldClose())
@@ -33,14 +44,31 @@ while (!Raylib.WindowShouldClose())
         position -= movemntY;
     }
 
- if (Raylib.IsKeyDown(KeyboardKey.S))
+if (Raylib.IsKeyDown(KeyboardKey.S))
     {
         position += movemntY;
     }
 
- Raylib.DrawCircleSector(position, 50, 0, -45, 100, Color.Violet);
+if (Raylib.IsKeyPressed(KeyboardKey.Up))
+    {
+        
+    }
 
- Raylib.DrawEllipse(100, 250, 50, 100, Color.Red);
+
+
+
+
+
+
+ Raylib.DrawCircleV(position, 25, Color.Violet);
+
+ Raylib.DrawCircleV(position, 5, Color.Red);
 
  Raylib.EndDrawing();
 }
+
+
+
+
+
+

@@ -8,6 +8,7 @@ Raylib.SetTargetFPS(30);
 
 Player p1 = new Player();
 
+Enemy e1 = new Enemy();
 
 while (!Raylib.WindowShouldClose())
 {
@@ -17,57 +18,80 @@ while (!Raylib.WindowShouldClose())
         p1.position -= p1.movementX;
     }
 
- else if (Raylib.IsKeyDown(KeyboardKey.D))
+ if (Raylib.IsKeyDown(KeyboardKey.D))
     {
         p1.position += p1.movementX;
     }
 
-  else if (Raylib.IsKeyDown(KeyboardKey.W))
+ if (Raylib.IsKeyDown(KeyboardKey.W))
      {
-         p1.position -= p1.movemntY;
+         p1.position -= p1.movementY;
      }
 
-  else if (Raylib.IsKeyDown(KeyboardKey.S))
+ if (Raylib.IsKeyDown(KeyboardKey.S))
      {
-         p1.position += p1.movemntY;
+         p1.position += p1.movementY;
     }
 
-
+//  player attack
   if (Raylib.IsKeyPressed(KeyboardKey.Up))
     {
-        Attack u1 = new Attack();
+        Attack a1 = new Attack();
 
-        u1.startposition = p1.position;
+        a1.startposition = p1.position;
 
-        Raylib.DrawCircleSector(u1.startposition, 60, -45, -135, 100, Color.Violet);
+        Raylib.DrawCircleSector(a1.startposition, a1.size, -45, -135, 100, Color.Violet);
     }
 
   if (Raylib.IsKeyPressed(KeyboardKey.Down))
     {
-        Attack d1 = new Attack();
+        Attack a1 = new Attack();
 
-        d1.startposition = p1.position;
+        a1.startposition = p1.position;
 
-        Raylib.DrawCircleSector(d1.startposition, 60, 45, 135, 100, Color.Violet);
+        Raylib.DrawCircleSector(a1.startposition, a1.size, 45, 135, 100, Color.Violet);
     }
 
   if (Raylib.IsKeyPressed(KeyboardKey.Right))
     {
-        Attack r1 = new Attack();
+        Attack a1 = new Attack();
 
-        r1.startposition = p1.position;
+       a1.startposition = p1.position;
 
-        Raylib.DrawCircleSector(r1.startposition, 60, 45, -45, 100, Color.Violet);
+        Raylib.DrawCircleSector (a1.startposition, a1.size, 45, -45, 100, Color.Violet);
     }
 
   if (Raylib.IsKeyPressed(KeyboardKey.Left))
     {
-        Attack l1 = new Attack();
+        Attack a1 = new Attack();
 
-        l1.startposition = p1.position;
+        a1.startposition = p1.position;
 
-        Raylib.DrawCircleSector(l1.startposition, 60, -135, -225, 100, Color.Violet);
+        Raylib.DrawCircleSector(a1.startposition, a1.size, -135, -225, 100, Color.Violet);
     }
+
+    // enemy movement towards player
+    if (e1.position.X > p1.position.X)
+    {
+        e1.position -= e1.movementX;
+    }
+    
+    if (e1.position.X < p1.position.X)
+    {
+        e1.position += e1.movementX;
+    }
+    
+    if (e1.position.Y > p1.position.Y)
+    {
+        e1.position -= e1.movementY;
+    }
+    
+    if (e1.position.Y < p1.position.Y)
+    {
+        e1.position += e1.movementY;
+    }
+
+
 
 
  Raylib.BeginDrawing();
@@ -79,10 +103,10 @@ while (!Raylib.WindowShouldClose())
  
  
  
- 
- Raylib.DrawCircleV(p1.position, 25, Color.Green);
-
-
+//  player
+ Raylib.DrawCircleV(p1.position, p1.size, Color.Green);
+// enemy
+ Raylib.DrawCircleV(e1.position, e1.size, Color.Red);
 
  
  Raylib.EndDrawing();

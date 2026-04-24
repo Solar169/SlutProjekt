@@ -1,6 +1,4 @@
-using Raylib_cs;
 using System.Numerics;
-using System.Runtime.Intrinsics.X86;
 namespace Player_namespace
 {
     

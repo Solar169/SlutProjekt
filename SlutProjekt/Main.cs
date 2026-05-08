@@ -10,6 +10,8 @@ Player p1 = new Player();
 
 Enemy e1 = new Enemy();
 
+bool dead = false;
+
 while (!Raylib.WindowShouldClose())
 {
 // player movement
@@ -91,6 +93,19 @@ while (!Raylib.WindowShouldClose())
         e1.position += e1.movementY;
     }
 
+    bool areOverlapping = Raylib.CheckCollisionCircles(p1.position, p1.size, e1.position, e1.size);
+    if (areOverlapping == true)
+    {
+        dead = true;
+    }
+
+    if (dead == true)
+    {
+        break;
+    }
+
+    
+
 
 
 
@@ -98,11 +113,6 @@ while (!Raylib.WindowShouldClose())
 
  Raylib.ClearBackground(Color.White);
 
- 
- 
- 
- 
- 
 //  player
  Raylib.DrawCircleV(p1.position, p1.size, Color.Green);
 // enemy
